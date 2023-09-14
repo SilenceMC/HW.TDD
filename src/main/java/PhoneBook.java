@@ -5,12 +5,17 @@ public class PhoneBook {
     private Map<String,String> phoneBook = new HashMap<>();
 
 
-    public int add(String name, String number){
-        phoneBook.put(name, number);
+    public int add(String name, String phoneNumber){
+        phoneBook.put(name, phoneNumber);
         return phoneBook.size();
     }
 
-    public String findByNumber(String number){
-        return null;
+    public String findByNumber(String phoneNumber){
+        return phoneBook.entrySet()
+                .stream()
+                .filter(x -> x.getValue().equals(phoneNumber))
+                .map(Map.Entry::getKey)
+                .findFirst()
+                .orElse(null);
     }
 }
