@@ -32,4 +32,17 @@ public class PhoneBookTest {
         //assert
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    void findByNumberTest(){
+        //arrange
+        String expected = "Семен";
+        testPhoneBook.add(testName,testPhoneNumber);
+
+        //act
+        String result = testPhoneBook.findByNumber(testPhoneNumber);
+
+        //assert
+        Assertions.assertEquals(expected, result);
+    }
 }
