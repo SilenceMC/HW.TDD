@@ -14,35 +14,35 @@ public class PhoneBookTest {
     private final String testPhoneNumber = "+7(999)1002525";
 
     @Test
-    void addTest(){
+    void addTest() {
         //arrange
         int expected = 1;
 
         //act
-        int result = testPhoneBook.add(testName,testPhoneNumber);
+        int result = testPhoneBook.add(testName, testPhoneNumber);
 
         //assert
         Assertions.assertEquals(expected, result);
     }
 
     @Test
-    void addWithSameNameTest(){
+    void addWithSameNameTest() {
         //arrange
         int expected = 1;
-        testPhoneBook.add(testName,testPhoneNumber);
+        testPhoneBook.add(testName, testPhoneNumber);
 
         //act
-        int result = testPhoneBook.add(testName,testPhoneNumber);
+        int result = testPhoneBook.add(testName, testPhoneNumber);
 
         //assert
         Assertions.assertEquals(expected, result);
     }
 
     @Test
-    void findByNumberTest(){
+    void findByNumberTest() {
         //arrange
         String expected = "Семен";
-        testPhoneBook.add(testName,testPhoneNumber);
+        testPhoneBook.add(testName, testPhoneNumber);
 
         //act
         String result = testPhoneBook.findByNumber(testPhoneNumber);
@@ -52,10 +52,10 @@ public class PhoneBookTest {
     }
 
     @Test
-    void findByNameTest(){
+    void findByNameTest() {
         //arrange
         String expected = "+7(999)1002525";
-        testPhoneBook.add(testName,testPhoneNumber);
+        testPhoneBook.add(testName, testPhoneNumber);
 
         //act
         String result = testPhoneBook.findByName(testName);
@@ -65,13 +65,13 @@ public class PhoneBookTest {
     }
 
     @Test
-    void printAllNamesTest(){
+    void printAllNamesTest() {
         //arrange
         Set<String> expected = new HashSet<>();
         expected.add("Артем");
         expected.add("Семен");
-        testPhoneBook.add(testName,testPhoneNumber);
-        testPhoneBook.add("Артем","+7(995)1002525");
+        testPhoneBook.add(testName, testPhoneNumber);
+        testPhoneBook.add("Артем", "+7(995)1002525");
 
         //act
         Set<String> result = testPhoneBook.printAllNames();
