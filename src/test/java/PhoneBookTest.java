@@ -2,6 +2,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class PhoneBookTest {
     PhoneBook testPhoneBook = new PhoneBook();
 
@@ -54,6 +59,22 @@ public class PhoneBookTest {
 
         //act
         String result = testPhoneBook.findByName(testName);
+
+        //assert
+        Assertions.assertEquals(expected, result);
+    }
+
+    @Test
+    void printAllNamesTest(){
+        //arrange
+        Set<String> expected = new HashSet<>();
+        expected.add("Артем");
+        expected.add("Семен");
+        testPhoneBook.add(testName,testPhoneNumber);
+        testPhoneBook.add("Артем","+7(995)1002525");
+
+        //act
+        Set<String> result = testPhoneBook.printAllNames();
 
         //assert
         Assertions.assertEquals(expected, result);
