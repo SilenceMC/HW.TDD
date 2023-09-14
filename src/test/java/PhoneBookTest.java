@@ -45,4 +45,17 @@ public class PhoneBookTest {
         //assert
         Assertions.assertEquals(expected, result);
     }
+
+    @Test
+    void findByNameTest(){
+        //arrange
+        String expected = "+7(999)1002525";
+        testPhoneBook.add(testName,testPhoneNumber);
+
+        //act
+        String result = testPhoneBook.findByName(testName);
+
+        //assert
+        Assertions.assertEquals(expected, result);
+    }
 }
