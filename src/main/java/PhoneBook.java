@@ -25,6 +25,6 @@ public class PhoneBook {
     }
 
     public Set<String> printAllNames(){
-        return null;
+        return phoneBook.keySet();
     }
 }
